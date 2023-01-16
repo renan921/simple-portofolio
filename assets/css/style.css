@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Noto+Sans+Display:wght@200;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway:wght@500&display=swap');
+* {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	font-family: 'Noto Sans Display', sans-serif;
+}
+
+.container {
+	max-width: 1020px;
+	margin: 0 auto;
+}
+
+.text-stylish {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.d-flex {
+	display: flex;
+}
+.text-center {
+	text-align: center;
+}
+
+/*Header Style*/
+.header-main {
+	background-color: rgba(255, 255, 255, .5);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+	padding: 10px 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+}
+.header-data {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.header-navigation-link {
+	margin: 0;
+	padding: 0;
+}
+.header-navigation-link li {
+	float: left;
+	list-style: none;
+	margin-left: 5px;
+	padding: 10px;
+}
+.header-navigation-link li a {
+	color: #3e3e3e;
+}
+.header-logo-text {
+	font-size: 25px;
+	padding: 10px 0;
+	letter-spacing: 12px;
+	font-weight: bold;
+}
+
+/*Banner Style*/
+#banner {
+	position: relative;
+	overflow: hidden;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+}
+.banner-bg {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	opacity: 0.1;
+}
+
+.banner-title {
+	font-size: 60px;
+	margin-bottom: 0px;
+}
+
+/*About*/
+#about {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+/*portfolio*/
+#portfolio {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	position: relative;
+	background-color: #f1f1f1;
+	padding: 50px 0;
+}
+.portfolio-collection {
+	align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+.portfolio-data {
+	width: 200px;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+	margin: 20px;
+	float: left;
+}
+.portfolio-data:hover .portfolio-img{
+  opacity: 1;
+  filter: none;
+}
+.portfolio-img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 10px;
+  filter: grayscale(1);
+  opacity: .9;
+  transition: .5s ease;
+}
+.portfolio-badge {
+	position: absolute;
+	padding: 5px 10px;
+	margin: 5px;
+  background-color: rgba(255, 255, 255, .5);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+	color: #3e3e3e;
+	border-radius: 20px;
+	font-size: 12px;
+}
+.portfolio-title {
+  background-color: rgba(255, 255, 255, .5);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+	position: absolute;
+	bottom: 0;
+	padding: 5px;
+	color: #3e3e3e;
+  border-radius: 0 10px 10px 0;
+}
+.portfolio-more {
+	margin: 20px 0;
+}
+.portfolio-more a {
+	color: #3e3e3e;
+}
+
+/*Contact*/
+#contact {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+/*Skills*/
+#skills {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.skill-bars{
+  padding: 25px 30px;
+  width: 600px;
+  background: #fff;
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+.skill-bars .skill-data{
+  margin: 20px 0;
+}
+.skill-bars .skill-data:first-child{
+  margin-top: 0px;
+}
+.skill-bars .skill-data .info{
+  margin-bottom: 5px;
+}
+.skill-bars .skill-data .info span{
+  font-weight: 500;
+  font-size: 17px;
+  opacity: 0;
+  animation: animateProgressText 0.5s 1s linear forwards;
+}
+.skill-bars .skill-data .progress-line{
+  height: 10px;
+  width: 100%;
+  background: #f0f0f0;
+  position: relative;
+  transform: scaleX(0);
+  transform-origin: left;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.05),
+              0 1px rgba(255,255,255,0.8);
+  animation: animateSkill 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+@keyframes animateSkill {
+  100%{
+    transform: scaleX(1);
+  }
+}
+.skill-data:hover .progress-line span {
+  background: #6665ee;
+}
+.skill-data .progress-line span{
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: #3e3e3e;
+  animation: animateSkill 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+  transition: .3s ease;
+}
+.skill-data .progress-line.html span{
+  width: 90%;
+}
+.skill-data .progress-line.css span{
+  width: 60%;
+}
+.skill-data .progress-line.javascript span{
+  width: 85%;
+}
+.skill-data .progress-line.android-java span{
+  width: 80%;
+}
+.skill-data .progress-line.android-kotlin span{
+  width: 85%;
+}
+.skill-data .progress-line.laravel span{
+  width: 90%;
+}
+.skill-data .progress-line.vuejs span{
+  width: 80%;
+}
+.progress-line span::after{
+  position: absolute;
+  top: -28px;
+  right: 0;
+  font-weight: 500;
+  background: #000;
+  color: #fff;
+  padding: 1px 8px;
+  font-size: 12px;
+  border-radius: 3px;
+  opacity: 0;
+  animation: animateProgressText 0.5s 1.5s linear forwards;
+}
+.progress-line.html span::after{
+  content: "90%";
+}
+.progress-line.css span::after{
+  content: "60%";
+}
+.progress-line.javascript span::after{
+  content: "85%";
+}
+.progress-line.android-java span::after{
+  content: "80%";
+}
+.progress-line.android-kotlin span::after{
+  content: "85%";
+}
+.progress-line.laravel span::after{
+  content: "90%";
+}
+.progress-line.vuejs span::after{
+  content: "80%";
+}
+@keyframes animateProgressText {
+  100%{
+    opacity: 1;
+  }
+}
+
+/* Snowflake styling */
+.snowflake {
+  color: #fff;
+  font-size: 1em;
+  text-shadow: 0 0 1px #000;
+}
+@-webkit-keyframes snowflakes-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@-webkit-keyframes snowflakes-shake {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  50% {
+    -webkit-transform: translateX(80px);
+    transform: translateX(80px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+@keyframes snowflakes-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@keyframes snowflakes-shake {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.snowflake {
+  position: fixed;
+  top: -10%;
+  z-index: 9999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+  -webkit-animation-duration: 10s, 3s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+  animation-name: snowflakes-fall, snowflakes-shake;
+  animation-duration: 10s, 3s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-play-state: running, running;
+}
+.snowflake:nth-of-type(0) {
+  left: 1%;
+  -webkit-animation-delay: 0s, 0s;
+  animation-delay: 0s, 0s;
+}
+.snowflake:nth-of-type(1) {
+  left: 10%;
+  -webkit-animation-delay: 1s, 1s;
+  animation-delay: 1s, 1s;
+}
+.snowflake:nth-of-type(2) {
+  left: 20%;
+  -webkit-animation-delay: 6s, 0.5s;
+  animation-delay: 6s, 0.5s;
+}
+.snowflake:nth-of-type(3) {
+  left: 30%;
+  -webkit-animation-delay: 4s, 2s;
+  animation-delay: 4s, 2s;
+}
+.snowflake:nth-of-type(4) {
+  left: 40%;
+  -webkit-animation-delay: 2s, 2s;
+  animation-delay: 2s, 2s;
+}
+.snowflake:nth-of-type(5) {
+  left: 50%;
+  -webkit-animation-delay: 8s, 3s;
+  animation-delay: 8s, 3s;
+}
+.snowflake:nth-of-type(6) {
+  left: 60%;
+  -webkit-animation-delay: 6s, 2s;
+  animation-delay: 6s, 2s;
+}
+.snowflake:nth-of-type(7) {
+  left: 70%;
+  -webkit-animation-delay: 2.5s, 1s;
+  animation-delay: 2.5s, 1s;
+}
+.snowflake:nth-of-type(8) {
+  left: 80%;
+  -webkit-animation-delay: 1s, 0s;
+  animation-delay: 1s, 0s;
+}
+.snowflake:nth-of-type(9) {
+  left: 90%;
+  -webkit-animation-delay: 3s, 1.5s;
+  animation-delay: 3s, 1.5s;
+}
